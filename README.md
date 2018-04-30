@@ -141,27 +141,27 @@ https://invis.io/NHHBG545A2Z#/279006862_Home
 
 
 ____________________________________________________________________________________________________________________________________________
-@Author jean-philippe:
+@Author Robin:
 
 ### BACKEND
-- Package co.simplon.model : Suspect.java  / DataSuspect.java classes ("surclasse" qui permet le typage du modele pour son traitement
+- Package co.simplon.model : Enquete.java  / DataEnquete.java classes ("surclasse" qui permet le typage du modele pour son traitement
 par le frontEnd).
-- Package co.simplon.dao : SuspectDAO.java Interface definissant les méthodes de traitement de la couche dao pour communiquer avec 
+- Package co.simplon.dao : EnqueteDAO.java Interface definissant les méthodes de traitement de la couche dao pour communiquer avec 
 la base de donnée.
-                           jdbcSuspectDAO.java Classe qui implémente les methodes de SuspectDAO.java utilise le preparedStatement pour executer les requtes sql (les instances de PreparedStatement contiennent des instructions sql déjà compilées qui améliore notement les preformances, les instructions sql contiennent un ou plusieurs paramètres d'entée) afin de communiquer avec le base de donnée.
-- Package co.simplon.service : SuspectService.java Classe qui expose au Controller les méthodes permettant de faire le lien entre 
+                           jdbcEnqueteDAO.java Classe qui implémente les methodes de EnqueteDAO.java utilise le preparedStatement pour executer les requtes sql (les instances de PreparedStatement contiennent des instructions sql déjà compilées qui améliore notement les preformances, les instructions sql contiennent un ou plusieurs paramètres d'entée) afin de communiquer avec le base de donnée.
+- Package co.simplon.service : EnqueteService.java Classe qui expose au Controller les méthodes permettant de faire le lien entre 
 la couche DAO et le ce dernier.
-- Packege co.simplon.service : Suspectservice.java Classe contenant lalogique metier qui fait le lien entre la couche dao et le controller.
-- Package co.simplon.controller: SuspectController.java permet le mapping des requetes url, classe permettant l'interaction entre le client et le server en traitant les actions de l'utilisateur, modifie les données du modèle et de la vue.
-- Package co.simplon.tests ( dans le dossier src/test/java ):  SuspectControllerTest.java teste les methodes getAllSuspect()
+- Packege co.simplon.service : EnqueteService.java Classe contenant la logique metier qui fait le lien entre la couche dao et le controller.
+- Package co.simplon.controller: EnqueteController.java permet le mapping des requetes url, classe permettant l'interaction entre le client et le server en traitant les actions de l'utilisateur, modifie les données du modèle et de la vue.
+- Package co.simplon.tests ( dans le dossier src/test/java ):  EnqueteControllerTest.java teste les methodes getAllSuspect()
 et get SuspectbyId() service/controller.
                                  TestDAO.java test les methodes Insert et Update.
-ces classes de tests ont été realisé ("pair programming") en collaboration avec Robin.
+ces classes de tests ont été realisé ("peer programming") en collaboration avec Jean-Philippe.
 - Le projet BackEnd contient des packages et classes realisées en commun tel que Security qui met en place la solution d'authentification fournie par Sebastien, ainsi que StorageService, UploadController qui devaient permettre la gestion d'upload et de download de fichier mais qui devront être implemntées dans une V2, Enfin les classes concernant les armes.
 
 ### FRONTEND
 
-- Repository CSI-Front est le repository front commun le tableau, formulaires ( creation et update ) et la carte de détail sont basée sur les composants realisés sur une maquette front => https://github.com/jipaow/suspectFront. Ces composants ont été largement remaniés et optimisés par Kayetan.
+- Repository CSI-Front est le repository front commun le tableau, formulaires ( creation et update ) et la carte de détail sont basée sur les composants realisés sur une maquette front => https://github.com/RobinVerger/suspectFront. Ces composants ont été largement remaniés et optimisés par Kayetan.
 - Repository suspectFront : Composant (Component) suspect ( tableau de liste des suspects ) / update-suspect ( formulaire d'update des informations d'un suspect) / form-suspect ( formulaire de creation d'un suspect ) / edit-suspect ( carte contenant le détails des infos d'un suspect ainsi que le lien vers le formulaire d'update (d'où le nom de composant pas très judicieux de prime abord) ) / suspect.service.ts classes de service qui permet l'interaction avec la partie server Backend .
 les tel qu'app-routing, app-module, suspect.ts .
 
